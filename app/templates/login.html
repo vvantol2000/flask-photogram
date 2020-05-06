@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block main %}
+<br>
+<br>
+<br>
+<h1 id="head">Login</h1>
+<br>
+<form class="login" action="{{ url_for('login') }}" method="post">
+    {% include 'flash_messages.html'%}{{ form.csrf_token }}
+    <div>
+        <div>{{form.username.label}}</div>
+        <div>{{form.username}}</div>
+    </div>
+    <div>
+        <div>{{form.password.label}}</div>
+        <div>{{form.password}}</div>
+    </div>
+    <br>
+    <button type="submit" name="submit" id="btn">Log in</button>
+
+</form>
+
+{% endblock %}

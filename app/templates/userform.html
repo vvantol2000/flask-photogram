@@ -1,0 +1,54 @@
+{% extends 'base.html'%}{% block main %}
+<br>
+<br>
+<br>
+<br>
+<h1 id="head"> Register</h1>
+<br>
+<div class="myform">
+    <form method="post" action="{{url_for('userform')}} " enctype="multipart/form-data">
+        {% include 'flash_messages.html'%} {{form. csrf_token}}
+        <div>
+            <div>{{form.username.label}}</div>
+            <div>{{form.username}}</div>
+
+        </div>
+        <div>
+            <div>
+                {{form.password.label}}
+            </div>
+            <div>
+                {{form.password}}
+            </div>
+        </div>
+        <div>
+            <div> {{form.firstname.label}}</div>
+            <div>{{form.firstname}}</div>
+        </div>
+        <div>
+
+            <div>{{form.lastname.label}}</div>
+            <div>{{form.lastname}}</div>
+        </div>
+        <div>
+            <div>{{form.email.label}}</div>
+            <div>{{form.email}}</div>
+        </div>
+        <div>
+            <div>{{form.location.label}}</div>
+            <div>{{form.location}}</div>
+        </div>
+        <div>
+            <div>{{form.biography.label}}</div>
+            <div>{{form.biography}}</div>
+        </div>
+        <div>
+            <div>{{form.photo.label}}</div>
+            <div>{{form.photo}}</div>
+        </div>
+        <br>
+
+        <button type='submit' name='submit' id="btn"> Register</button>
+    </form>
+</div>
+{% endblock%}
